@@ -1,0 +1,28 @@
+{
+	admin off
+	persist_config off
+	auto_https off
+	servers {
+		# Railway's edge reaches the container from a private address, so trust
+		# its X-Forwarded-For: OpenPanel needs the visitor's IP for geolocation.
+		trusted_proxies static private_ranges 100.64.0.0/10
+	}
+}
+
+:{$PORT:8080} {
+	encode gzip
+
+	# Health check for the proxy itself (Railway probes this path).
+	handle /proxy-health {
+		respond "OK" 200
+	}
+
+	# Same routing as upstream's self-hosting Caddyfile.
+	handle_path /api* {
+		reverse_proxy {$API_UPSTREAM}
+	}
+
+	handle {
+		reverse_proxy {$DASHBOARD_UPSTREAM}
+	}
+}

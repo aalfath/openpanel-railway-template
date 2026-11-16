@@ -1,0 +1,27 @@
+<clickhouse>
+    <logger>
+        <level>warning</level>
+        <console>true</console>
+        <log remove="remove"/>
+        <errorlog remove="remove"/>
+    </logger>
+
+    <keep_alive_timeout>10</keep_alive_timeout>
+
+    <!-- Stop the system log tables OpenPanel doesn't need (upstream settings) -->
+    <query_thread_log remove="remove"/>
+    <query_log remove="remove"/>
+    <text_log remove="remove"/>
+    <trace_log remove="remove"/>
+    <metric_log remove="remove"/>
+    <asynchronous_metric_log remove="remove"/>
+    <session_log remove="remove"/>
+    <part_log remove="remove"/>
+
+    <!-- Not used any more, kept because upstream keeps them -->
+    <macros>
+        <shard>1</shard>
+        <replica>replica1</replica>
+        <cluster>openpanel_cluster</cluster>
+    </macros>
+</clickhouse>
