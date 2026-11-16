@@ -1,3 +1,5 @@
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/openpanel-3?utm_medium=integration&utm_source=button&utm_campaign=openpanel)
+
 # OpenPanel on Railway
 
 Railway template for [OpenPanel](https://openpanel.dev), the open-source web and product analytics platform (events, funnels, retention, user profiles, real-time dashboards). This repo wraps the official OpenPanel images, pinned by version and digest, so every app service in the template builds from here.
