@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-16: Deploy on Railway button
+
+- README starts with the Deploy on Railway button for the published template (`openpanel-3`). No change to the services.
+
 ## 2026-11-16: OpenPanel 2.3.0 (first release)
 
 - OpenPanel 2.3.0 API, dashboard and worker, ClickHouse 25.10.2.65, Caddy 2.11.9, each pinned by digest.
